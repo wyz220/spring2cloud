@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comsumer-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consume-shoe-hystrix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-hystrix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-hystrix2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-user-metadata" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaClient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaServerAuth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaServerHA" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-zuul-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-zuul-api-ha" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-dashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-shoe" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-user-metadata" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sleuth-elk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zipkin-Server" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,9 @@
+#端口号
+server:
+  port: 8886
+info:
+  app:
+    name:@project.artifactId@
+  java:
+    source:@java.version@
+    target:@java.version@

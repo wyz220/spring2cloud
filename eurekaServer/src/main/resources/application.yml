@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka-server
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: 123456
+server:
+  port: 8761
+
+eureka:
+  server:
+    #不使用自我保护
+    enable-self-preservation: false
+  instance:
+    # 当前实例的主机名称
+    hostname: eureka
+  client:
+    # 是否注册到eurekaserver
+    registerWithEureka: false
+    # 是否拉取信息，单个服务，不需要拉取其他集群
+    fetchRegistry: false
+  ServiceUrl:
+    defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/

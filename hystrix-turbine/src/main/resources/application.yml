@@ -1,0 +1,14 @@
+server:
+  port: 8887
+spring:
+  application:
+    name: hystrix-turbine
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+  appConfig: CONSUME-SHOE-HYSTRIX,consume-movie-hystrix2
+  clusterNameExpression: "'default'"

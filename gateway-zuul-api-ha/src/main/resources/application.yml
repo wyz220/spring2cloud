@@ -1,0 +1,38 @@
+server:
+  port: 8889
+spring:
+  application:
+    name: gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+#zuul:
+#  prefix: /api
+#  strip-prefix: true  #不用截取路径
+#  routes:
+#    microservice-provider-user: /users/**
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'   #允许显示所有信息，包括/actuator/health，/actuator/hystrix.stream
+zuul:
+  prefix: /apis
+  strip-prefix: true  #不用截取路径
+  routes:
+    CONSUME-MOVIE-HYSTRIX2: # 名称要对应注册到eureka的serviceIdhttp://localhost:8888/apis/user/1
+      path: /user/**
+      strip-prefix: false
+    CONSUME-SHOE-HYSTRIX: #http://localhost:8888/apis/api/shoe/1
+      path: /api/shoe/**
+      strip-prefix: false
+
+logging:
+  level:
+    com.netflix: DEBUG

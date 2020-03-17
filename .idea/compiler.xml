@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="comsumerribbon" />
+        <module name="consume-shoe-hystrix" />
+        <module name="consumer" />
+        <module name="consumerfeign" />
+        <module name="consumerhystrix" />
+        <module name="consumerhystrix2" />
+        <module name="consumerusermetadata" />
+        <module name="eurekaClient" />
+        <module name="eurekaServer" />
+        <module name="eurekaServerAuth" />
+        <module name="eurekaServerHA" />
+        <module name="gateway-zuul" />
+        <module name="gateway-zuul-api" />
+        <module name="gateway-zuul-api-ha" />
+        <module name="hystrixdashboard" />
+        <module name="hystrixturbine" />
+        <module name="provider" />
+        <module name="provider-shoe" />
+        <module name="providerusermetadata" />
+        <module name="sleuth-elk" />
+        <module name="zipkin-Server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
+      <module name="product" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="comsumerribbon" options="-parameters" />
+      <module name="consume-shoe-hystrix" options="-parameters" />
+      <module name="consumer" options="-parameters" />
+      <module name="consumerfeign" options="-parameters" />
+      <module name="consumerhystrix" options="-parameters" />
+      <module name="consumerhystrix2" options="-parameters" />
+      <module name="consumerusermetadata" options="-parameters" />
+      <module name="eurekaClient" options="-parameters" />
+      <module name="eurekaServer" options="-parameters" />
+      <module name="eurekaServerAuth" options="-parameters" />
+      <module name="eurekaServerHA" options="-parameters" />
+      <module name="gateway-zuul" options="-parameters" />
+      <module name="gateway-zuul-api" options="-parameters" />
+      <module name="gateway-zuul-api-ha" options="-parameters" />
+      <module name="hystrixdashboard" options="-parameters" />
+      <module name="hystrixturbine" options="-parameters" />
+      <module name="product" options="-parameters" />
+      <module name="provider" options="-parameters" />
+      <module name="provider-shoe" options="-parameters" />
+      <module name="providerusermetadata" options="-parameters" />
+      <module name="sleuth-elk" options="-parameters" />
+      <module name="zipkin-Server" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring2cloud</artifactId>
+        <groupId>com.wyz</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>eurekaServer</artifactId>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>     <!--定义一个执行命令的id-->
+                        <phase>package</phase>   <!--绑定mvn的哪个命令-->
+                        <goals>
+                            <goal>build</goal>   <!--要执行的命令 -->
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>image-tag</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>tag</goal>      <!--tag命令，相当于docker的tag命令-->
+                        </goals>
+                        <configuration>
+                            <image>my/eureka:0.0.2</image>   <!--镜像名-->
+                            <newName>localhost:5000/my/eureka:0.0.2</newName>   <!--打的标签名-->
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>package-push</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>push</goal>    <!--相当于docker的push命令-->
+                        </goals>
+                        <configuration>
+                            <imageName>localhost:5000/my/eureka:0.0.2</imageName>  <!--要push的镜像名 这里相当于远程调用-->
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <forceTags>true</forceTags>    <!--覆盖相同标签镜像-->
+                    <imageName>my/eureka:0.0.2</imageName>  <!--指定镜像名称 仓库/镜像名:标签-->
+                    <baseImage>openjdk:8u151-jdk</baseImage>    <!--指定基础镜像，相当于dockerFile中的FROM<image> -->
+                    <dockerHost>http://120.78.0.145:6666</dockerHost>  <!-- 指定仓库地址 -->
+                    <entryPoint>["java","-jar","/${project.build.finalName}.jar"]</entryPoint> <!-- 容器启动执行的命令，相当于dockerFile的ENTRYPOINT -->
+                    <resources>
+                        <resource>                                             <!-- 指定资源文件 -->
+                            <targetPath>/</targetPath>                         <!-- 指定要复制的目录路径，这里是当前目录 -->
+                            <directory>${project.build.directory}</directory>  <!-- 指定要复制的根目录，这里是target目录 -->
+                            <include>${project.build.finalName}.jar</include>  <!-- 指定需要拷贝的文件，这里指最后生成的jar包 -->
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
