@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="comsumerribbon" />
+        <module name="configserver" />
         <module name="consume-shoe-hystrix" />
+        <module name="consume-user-feign" />
         <module name="consumer" />
         <module name="consumerfeign" />
         <module name="consumerhystrix" />
@@ -25,8 +27,10 @@
         <module name="hystrixturbine" />
         <module name="provider" />
         <module name="provider-shoe" />
+        <module name="provider-user-feign" />
         <module name="providerusermetadata" />
         <module name="sleuth-elk" />
+        <module name="slueth-zipkin" />
         <module name="zipkin-Server" />
       </profile>
     </annotationProcessing>
@@ -39,7 +43,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="-parameters" />
       <module name="comsumerribbon" options="-parameters" />
+      <module name="configserver" options="-parameters" />
       <module name="consume-shoe-hystrix" options="-parameters" />
+      <module name="consume-user-feign" options="-parameters" />
       <module name="consumer" options="-parameters" />
       <module name="consumerfeign" options="-parameters" />
       <module name="consumerhystrix" options="-parameters" />
@@ -57,8 +63,10 @@
       <module name="product" options="-parameters" />
       <module name="provider" options="-parameters" />
       <module name="provider-shoe" options="-parameters" />
+      <module name="provider-user-feign" options="-parameters" />
       <module name="providerusermetadata" options="-parameters" />
       <module name="sleuth-elk" options="-parameters" />
+      <module name="slueth-zipkin" options="-parameters" />
       <module name="zipkin-Server" options="-parameters" />
     </option>
   </component>

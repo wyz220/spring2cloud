@@ -38,6 +38,9 @@
         <module>gateway-zuul-api-ha</module>
         <module>zipkin-Server</module>
         <module>sleuth-elk</module>
+        <module>slueth-zipkin</module>
+        <module>provider-user-feign</module>
+        <module>consume-user-feign</module>
     </modules>
 
 

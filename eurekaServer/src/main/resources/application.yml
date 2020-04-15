@@ -1,4 +1,8 @@
 spring:
+  cloud:
+    inetutils:
+      preferredNetworks:
+        - 192.168
   application:
     name: eureka-server
   security:
@@ -8,6 +12,7 @@ spring:
       name: admin
       password: 123456
 server:
+  ip: localhost
   port: 8761
 
 eureka:
@@ -23,4 +28,4 @@ eureka:
     # 是否拉取信息，单个服务，不需要拉取其他集群
     fetchRegistry: false
   ServiceUrl:
-    defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+    defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${server.ip}:${server.port}/eureka/

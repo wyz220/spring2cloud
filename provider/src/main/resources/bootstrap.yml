@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#默认是根据name-profile.yml  默认是找master分支
+#/{name}-{profiles}.yml
+#/{label}/{name}-{profiles}.yml  name服务名称 profiles环境 label分支。默认master
+# http://localhost:8777/provider-user-.yml
+spring:
+  application:
+    name: provider-user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+      profile: dev
+

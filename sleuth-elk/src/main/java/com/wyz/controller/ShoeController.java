@@ -30,7 +30,7 @@ public class ShoeController {
     @RequestMapping("/{id}")
     public Shoe getById(@PathVariable("id") Long id){
         try {
-            log.info("by id invoked...");
+            log.info("by id invoked2                 ...");
             return this.shoeService.getById(id);
         }catch (Exception e){
             e.printStackTrace();

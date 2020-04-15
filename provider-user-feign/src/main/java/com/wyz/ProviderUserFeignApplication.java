@@ -8,10 +8,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @MapperScan("com.wyz.mapper")  //配置mapper扫描
 @EnableEurekaClient
+public class ProviderUserFeignApplication {
 
-public class ApplicationProvider {
-
-    public static void main(String[] args){
-        SpringApplication.run(ApplicationProvider.class,args);
+    public static void main(String[] args) {
+        SpringApplication.run(ProviderUserFeignApplication.class,args);
     }
 }

@@ -1,6 +1,6 @@
 #端口号
 server:
-  port: 8884
+  port: 8762
 info:
   app:
     name:@project.artifactId@
@@ -17,13 +17,9 @@ logging:
   level:
     root: INFO
     org.springframework.cloud.sleuth: DEBUG
-    org.springframework.web.servlet.DispatcherServlet: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
 #数据库的配置信息
 spring:
-  application:
-    name: provider-shoe
-  zipkin:
-    base-url: http://localhost:9411
   sleuth:
     sampler:
       percentage: 1.0

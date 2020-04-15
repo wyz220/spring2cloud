@@ -1,9 +1,0 @@
-#端口号
-server:
-  port: 8886
-info:
-  app:
-    name:hystrix-dashboard
-  java:
-    source:1.8.0_121
-    target:1.8.0_121

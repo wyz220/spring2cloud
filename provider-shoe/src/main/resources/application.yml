@@ -22,6 +22,11 @@ logging:
 spring:
   application:
     name: provider-shoe
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
   datasource:
     name: wyzDataSource
     url: jdbc:mysql://localhost:3306/db2?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false

@@ -6,6 +6,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.wyz.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,6 +31,9 @@ public class RestTestController {
     @Autowired
    private RestTemplate restTemplate;
 
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+    
     @HystrixCommand(fallbackMethod = "findByIdssFallback2",threadPoolProperties = {
                       @HystrixProperty(name="coreSize",value="1"),
                       @HystrixProperty(name="maxQueueSize",value="20")
@@ -36,7 +42,7 @@ public class RestTestController {
     })
     @GetMapping("/user/{id}")
     public User findById(@PathVariable Long id) {
-
+        ServiceInstance product = loadBalancerClient.choose("product");
         return this.restTemplate.getForObject(userServiceUrl+"/user/"+id,User.class);
 
     }
